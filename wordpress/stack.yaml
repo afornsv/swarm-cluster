@@ -1,0 +1,47 @@
+version: '3.3'
+
+services:
+   mysql_wp:
+     image: mysql:5.7
+     container_name: mysql_wp
+     volumes:
+       - mysql_db:/var/lib/mysql
+     networks:
+       - backend
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: somewordpress
+       MYSQL_DATABASE: wordpress
+       MYSQL_USER: wordpress
+       MYSQL_PASSWORD: wordpress
+
+   wordpress:
+     depends_on:
+       - mysql_wp
+     image: wordpress:latest
+     container_name: wordpress
+     volumes:
+       - wordpress_file:/var/www/html
+     networks:
+       - backend
+       - frontend
+     ports:
+       - "8000:80"
+     restart: always
+     environment:
+       WORDPRESS_DB_HOST: mysql_wp:3306
+       WORDPRESS_DB_USER: wordpress
+       WORDPRESS_DB_PASSWORD: wordpress
+       WORDPRESS_DB_NAME: wordpress
+     deploy:
+      labels:
+        traefik.port: 80
+        traefik.frontend.rule: "Host: wordpress.34.76.156.82 .nip.io"
+        traefik.docker.network: proxy
+volumes:
+    mysql_db: {}
+    wordpress_file: {}
+networks:
+    backend: {}
+    frontend: {}
+

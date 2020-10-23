@@ -1,0 +1,27 @@
+version: "3.7"
+services:
+  traefik:
+    image: traefik:1.7
+    command:
+      - "--api"
+      - "--entrypoints=Name:http Address::80"
+      - "--entrypoints=Name:https Address::443 TLS"
+      - "--defaultentrypoints=http,https"
+      - "--docker"
+      - "--docker.swarmmode"
+      - "--docker.watch"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - proxy
+    ports:
+      - 80:80
+      - 443:443
+      - 8080:8080
+    deploy:
+      restart_policy:
+        condition: on-failure
+
+networks:
+  proxy:
+    external: true
