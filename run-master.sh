@@ -1,6 +1,27 @@
 curl https://get.docker.com | sudo bash
 
 mkdir -p /srv/docker
+
+# Crear diretoris on s'emmagatzemaran els stack.yaml de cada servei
+mkdir -p /srv/docker/stacks/portainer
+mkdir -p /srv/docker/stacks/traefik
+mkdir -p /srv/docker/stacks/wordpress
+mkdir -p /srv/docker/stacks/comptador
+mkdir -p /srv/docker/stacks/consul-cluster
+# Crear diretoris on s'emmagatzemaran les dates de cada servei
+mkdir -p /srv/docker/data/portainer/portainer
+mkdir -p /srv/docker/data/traefik/traefik
+mkdir -p /srv/docker/data/wordpress/wordpress
+mkdir -p /srv/docker/data/comptador/comptador
+mkdir -p /srv/docker/data/consul-cluster/consul-cluster
+
+# Copia els yamls del repo als directoris creats
+cp portainer/stack.yaml /srv/docker/stacks/portainer/stack.yaml
+cp traefik/stack.yaml /srv/docker/stacks/traefik/stack.yaml
+cp wordpress/stack.yaml /srv/docker/stacks/wordpress/stack.yaml
+# cp comptador/stack.yaml /srv/docker/stacks/comptador/stack.yaml
+# cp consul-cluster/stack.yaml /srv/docker/stacks/consul-cluster/stack.yaml
+
 #	Configurar NFS
 echo 'maquina-1:/srv/nfs /srv/docker nfs defaults,nfsvers=3 0 0' >> /etc/fstab
 apt install -y nfs-kernel-server
