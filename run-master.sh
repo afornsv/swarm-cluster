@@ -1,4 +1,3 @@
-apt install -y git
 curl https://get.docker.com | sudo bash
 
 mkdir -p /srv/docker
@@ -14,7 +13,6 @@ docker swarm join-token manager|grep join  > /srv/docker/join.sh
 chmod +x !$
 
 cd /srv/docker
-git clone https://github.com/afornsv/swarm-cluster
 
 docker network create proxy -d overlay
 docker network create portainer_agent -d overlay
