@@ -11,13 +11,13 @@ services:
       - portainer_agent
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - /srv/docker/data/portainer/portainer/data:/data
+      - ${REMOTE_MOUNT}/portainer/portainer/data:/data
     deploy:
       mode: replicated
       replicas: 1
       labels:
         traefik.port: 9000
-        traefik.frontend.rule: "Host: portainer.34.76.156.82.nip.io"
+        traefik.frontend.rule: "Host: portainer.${IP1}.nip.io,portainer.${IP2}.nip.io,portainer.${IP3}.nip.io"
         traefik.docker.network: 'proxy'
       placement:
         constraints: [node.role == manager]

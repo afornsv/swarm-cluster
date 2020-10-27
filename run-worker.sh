@@ -8,4 +8,4 @@ apt install -y nfs-common
 echo '/srv/nfs 10.132.0.0/24(rw,no_root_squash,no_subtree_check)' >> /etc/exports
 mount -a
 
-/srv/docker/join.sh
+#/srv/docker/join.sh

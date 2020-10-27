@@ -5,7 +5,7 @@ services:
      image: mysql:5.7
      container_name: mysql_wp
      volumes:
-       - mysql_db:/var/lib/mysql
+       - ${REMOTE_MOUNT}/wordpress/mysql/data:/var/lib/mysql
      networks:
        - backend
      restart: always
@@ -21,7 +21,7 @@ services:
      image: wordpress:latest
      container_name: wordpress
      volumes:
-       - wordpress_file:/var/www/html
+       - ${REMOTE_MOUNT}/wordpress/wordpress/data:/var/www/html
      networks:
        - backend
        - frontend
@@ -36,11 +36,8 @@ services:
      deploy:
       labels:
         traefik.port: 80
-        traefik.frontend.rule: "Host: wordpress.34.76.156.82 .nip.io"
+        traefik.frontend.rule: "Host: wordpress.${IP1}.nip.io,wordpress.${IP2}.nip.io,wordpress.${IP3}.nip.io"
         traefik.docker.network: proxy
-volumes:
-    mysql_db: {}
-    wordpress_file: {}
 networks:
     backend: {}
     frontend: {}

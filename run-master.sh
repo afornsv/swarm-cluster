@@ -12,6 +12,7 @@ mkdir -p /srv/docker/stacks/consul-cluster
 mkdir -p /srv/docker/data/portainer/portainer/data
 mkdir -p /srv/docker/data/traefik/traefik/data
 mkdir -p /srv/docker/data/wordpress/wordpress/data
+mkdir -p /srv/docker/data/wordpress/mysql/data
 mkdir -p /srv/docker/data/comptador/comptador/data
 mkdir -p /srv/docker/data/consul-cluster/consul-cluster/data
 
