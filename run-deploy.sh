@@ -1,6 +1,6 @@
-IP1=$(getent hosts instance-1 | awk '{print $1}')
-IP2=$(getent hosts instance-2 | awk '{print $1}')
-IP3=$(getent hosts instance-3 | awk '{print $1}')
+IP1=$(getent hosts maquina-1 | awk '{print $1}')
+IP2=$(getent hosts maquina-2 | awk '{print $1}')
+IP3=$(getent hosts maquina-3 | awk '{print $1}')
 export IP1 IP2 IP3
 export REMOTE_MOUNT="/srv/docker/data"
 

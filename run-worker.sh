@@ -1,6 +1,7 @@
 apt install -y git
 curl https://get.docker.com | sudo bash
 
+mkdir /srv/nfs
 mkdir -p /srv/docker
 #	Configurar NFS
 echo 'maquina-1:/srv/nfs /srv/docker nfs defaults,nfsvers=3 0 0' >> /etc/fstab
