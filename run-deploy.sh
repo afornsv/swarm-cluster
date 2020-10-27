@@ -3,6 +3,9 @@ IP2=$(getent hosts maquina-2 | awk '{print $1}')
 IP3=$(getent hosts maquina-3 | awk '{print $1}')
 export IP1 IP2 IP3
 export REMOTE_MOUNT="/srv/docker/data"
+echo Valor IP1: $IP1
+echo Valor IP2: $IP2
+echo Valor IP3: $IP3
 
 cd /srv/docker/stacks
 #docker stack deploy -c traefik/stack.yaml traefik

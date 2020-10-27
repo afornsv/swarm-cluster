@@ -1,5 +1,6 @@
 curl https://get.docker.com | sudo bash
 
+mkdir -P /srv/nfs
 mkdir -p /srv/docker
 
 # Crear diretoris on s'emmagatzemaran els stack.yaml de cada servei
@@ -38,3 +39,5 @@ cd /srv/docker
 
 docker network create proxy -d overlay
 docker network create portainer_agent -d overlay
+docker network create backend -d overlay
+docker network create frontend -d overlay
