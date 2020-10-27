@@ -9,11 +9,11 @@ mkdir -p /srv/docker/stacks/wordpress
 mkdir -p /srv/docker/stacks/comptador
 mkdir -p /srv/docker/stacks/consul-cluster
 # Crear diretoris on s'emmagatzemaran les dates de cada servei
-mkdir -p /srv/docker/data/portainer/portainer
-mkdir -p /srv/docker/data/traefik/traefik
-mkdir -p /srv/docker/data/wordpress/wordpress
-mkdir -p /srv/docker/data/comptador/comptador
-mkdir -p /srv/docker/data/consul-cluster/consul-cluster
+mkdir -p /srv/docker/data/portainer/portainer/data
+mkdir -p /srv/docker/data/traefik/traefik/data
+mkdir -p /srv/docker/data/wordpress/wordpress/data
+mkdir -p /srv/docker/data/comptador/comptador/data
+mkdir -p /srv/docker/data/consul-cluster/consul-cluster/data
 
 # Copia els yamls del repo als directoris creats
 cp portainer/stack.yaml /srv/docker/stacks/portainer/stack.yaml
