@@ -3,7 +3,7 @@
 version: '3.7'
 services:
   grafana:
-    image: grafana/grafana
+    image: grafana/grafana:latest
     networks:
      - monitoring
      - proxy
@@ -19,7 +19,7 @@ services:
         traefik.docker.network: proxy
   
   influxdb:
-    image: influxdb
+    image: influxdb:latest
     configs:
       - source: influxdb
         target: /etc/influxdb/influxdb.conf
