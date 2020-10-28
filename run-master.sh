@@ -49,3 +49,5 @@ docker network create backend -d overlay
 docker network create frontend -d overlay
 docker network create logstash -d overlay
 docker network create elasticsearch -d overlay
+
+##ULL! Fer un systemctl restart nfs-kernel-server i assegurar-se que el servei xuta bé
