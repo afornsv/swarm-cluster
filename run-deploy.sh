@@ -1,8 +1,8 @@
 #IP1=$(getent hosts maquina-1 | awk '{print $1}')
 
-IP1=$0
-IP2=$1
-IP3=$2
+IP1=$1
+IP2=$2
+IP3=$3
 export IP1 IP2 IP3
 export REMOTE_MOUNT="/srv/docker/data"
 echo Valor IP1: $IP1
