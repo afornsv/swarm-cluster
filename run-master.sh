@@ -28,6 +28,7 @@ cp wordpress/stack.yaml /srv/docker/stacks/wordpress/stack.yaml
 # cp comptador/stack.yaml /srv/docker/stacks/comptador/stack.yaml
 # cp consul-cluster/stack.yaml /srv/docker/stacks/consul-cluster/stack.yaml
 cp elasticsearch/stack.yaml /srv/docker/stacks/elasticsearch/stack.yaml
+cp elasticsearch/setup /srv/docker/stacks/elasticsearch/setup
 cp elasticsearch/files/logstash.conf /srv/docker/data/elasticsearch/logstash/config
 
 #	Configurar NFS
