@@ -16,3 +16,4 @@ docker stack deploy -c wordpress/stack.yaml wordpress
 #docker stack deploy -c consul-cluster/stack.yaml consul-cluster
 #docker stack deploy -c comptador/stack.yaml comptador
 docker stack deploy -c elasticsearch/stack.yaml elasticsearch
+docker stack deploy -c monitor/stack.yaml monitor

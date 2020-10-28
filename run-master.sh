@@ -33,9 +33,9 @@ cp wordpress/stack.yaml /srv/docker/stacks/wordpress/stack.yaml
 cp elasticsearch/stack.yaml /srv/docker/stacks/elasticsearch/stack.yaml
 cp elasticsearch/setup /srv/docker/stacks/elasticsearch/setup
 cp elasticsearch/files/logstash.conf /srv/docker/data/elasticsearch/logstash/config
-cp monitor/stack.yaml /srv/docker/data/monitor
-cp monitor/telegraf.conf /srv/docker/data/monitor
-cp monitor/influxdb.conf /srv/docker/data/monitor
+cp monitor/stack.yaml /srv/docker/stacks/monitor
+cp monitor/telegraf.conf /srv/docker/stacks/monitor
+cp monitor/influxdb.conf /srv/docker/stacks/monitor
 
 
 #	Configurar NFS
@@ -57,5 +57,7 @@ docker network create backend -d overlay
 docker network create frontend -d overlay
 docker network create logstash -d overlay
 docker network create elasticsearch -d overlay
+
+
 
 ##ULL! Fer un systemctl restart nfs-kernel-server i assegurar-se que el servei xuta bé
