@@ -5,7 +5,7 @@ services:
      image: mysql:5.7
      container_name: mysql_wp
      volumes:
-       - ${REMOTE_MOUNT}/wordpress/mysql/data:/var/lib/mysql
+       - /srv/docker/data/wordpress/mysql/data:/var/lib/mysql
      networks:
        - backend
      restart: always
@@ -21,7 +21,7 @@ services:
      image: wordpress:latest
      container_name: wordpress
      volumes:
-       - ${REMOTE_MOUNT}/wordpress/wordpress/data:/var/www/html
+       - /srv/docker/data/wordpress/wordpress/data:/var/www/html
      networks:
        - backend
        - frontend
