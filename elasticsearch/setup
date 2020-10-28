@@ -27,10 +27,10 @@
 #	Single-node ES, just a remote volume required
 mkdir -p ${REMOTE_MOUNT}/${STACK_NAME}/elasticsearch/data 2>/dev/null
 #	Give perm to create nodes
-chmod 1777 ${REMOTE_MOUNT}/${STACK_NAME}/elasticsearch/data
-mkdir -p  ${REMOTE_MOUNT}/${STACK_NAME}/logstash/config 2>/dev/null
+chmod 1777 ${REMOTE_MOUNT}/elasticsearch/elasticsearch/data
+mkdir -p  ${REMOTE_MOUNT}/elasticsearch/logstash/config 2>/dev/null
 
-cp ${STACKS}/available/logspout-elk/files/logstash.conf ${REMOTE_MOUNT}/${STACK_NAME}/logstash/config/
+cp ${STACKS}/available/logspout-elk/files/logstash.conf ${REMOTE_MOUNT}/elasticsearch/logstash/config
 askVar "DEPLOY_MODE" "Where should ElasticSearch be deployed? [all,managers,workers,filter=whatever] " "all"
 askVar "LOGS_URL" "What hostname will be used to access Kibana? " "kibana.${SWARM_DOMAIN}"
 #	Modify Kernel Settings on affected nodes
