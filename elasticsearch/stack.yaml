@@ -55,7 +55,7 @@ services:
       replicas: 1
       labels:
         traefik.port: 5601
-        traefik.frontend.rule: "Host:${LOGS_URL}"
+        traefik.frontend.rule: "Host: kibana.${IP1}.nip.io,kibana.${IP2}.nip.io,kibana.${IP3}.nip.io"
         traefik.docker.network: "proxy"
 
 networks:
