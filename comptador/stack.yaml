@@ -20,10 +20,9 @@ services:
       labels:
         traefik.port: 80
         traefik.frontend.rule: "Host: comptador.${IP1}.nip.io,comptador.${IP2}.nip.io,comptador.${IP3}.nip.io"
-        traefik.docker.network: 'proxy'
+        traefik.docker.network: proxy
 
 networks:
   proxy:
     external: true
-  backend:
-    driver: 'overlay'
+  backend: {}
