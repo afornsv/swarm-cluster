@@ -1,6 +1,6 @@
 curl https://get.docker.com | sudo bash
 
-mkdir -P /srv/nfs
+mkdir -p /srv/nfs
 mkdir -p /srv/docker
 
 # Crear diretoris on s'emmagatzemaran els stack.yaml de cada servei
