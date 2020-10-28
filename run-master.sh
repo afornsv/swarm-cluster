@@ -10,6 +10,7 @@ mkdir -p /srv/docker/stacks/wordpress
 mkdir -p /srv/docker/stacks/comptador
 mkdir -p /srv/docker/stacks/consul-cluster
 mkdir -p /srv/docker/stacks/elasticsearch
+mkdir -p /srv/docker/stacks/monitor
 
 # Crear diretoris on s'emmagatzemaran les dates de cada servei
 mkdir -p /srv/docker/data/portainer/portainer/data
@@ -20,6 +21,8 @@ mkdir -p /srv/docker/data/comptador/comptador/data
 mkdir -p /srv/docker/data/consul-cluster/consul-cluster/data
 mkdir -p /srv/docker/data/elasticsearch/elasticsearch/data
 mkdir -p /srv/docker/data/elasticsearch/logstash/config
+mkdir -p /srv/docker/data/monitor/grafana/data
+mkdir -p /srv/docker/data/monitor/influxdb/data
 
 # Copia els yamls del repo als directoris creats
 cp portainer/stack.yaml /srv/docker/stacks/portainer/stack.yaml
@@ -30,6 +33,10 @@ cp wordpress/stack.yaml /srv/docker/stacks/wordpress/stack.yaml
 cp elasticsearch/stack.yaml /srv/docker/stacks/elasticsearch/stack.yaml
 cp elasticsearch/setup /srv/docker/stacks/elasticsearch/setup
 cp elasticsearch/files/logstash.conf /srv/docker/data/elasticsearch/logstash/config
+cp monitor/stack.yaml /srv/docker/data/monitor
+cp monitor/telegraf.conf /srv/docker/data/monitor
+cp monitor/influxdb.conf /srv/docker/data/monitor
+
 
 #	Configurar NFS
 echo 'maquina-1:/srv/nfs /srv/docker nfs defaults,nfsvers=3 0 0' >> /etc/fstab
