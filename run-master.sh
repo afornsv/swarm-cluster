@@ -22,13 +22,14 @@ mkdir -p /srv/docker/data/consul-cluster/consul-cluster/data
 mkdir -p /srv/docker/data/elasticsearch/elasticsearch/data
 mkdir -p /srv/docker/data/elasticsearch/logstash/config
 mkdir -p /srv/docker/data/monitor/grafana/data
+chmod -R 777 /srv/docker/data/monitor/grafana/data
 mkdir -p /srv/docker/data/monitor/influxdb/data
 
 # Copia els yamls del repo als directoris creats
 cp portainer/stack.yaml /srv/docker/stacks/portainer/stack.yaml
 cp traefik/stack.yaml /srv/docker/stacks/traefik/stack.yaml
 cp wordpress/stack.yaml /srv/docker/stacks/wordpress/stack.yaml
-# cp comptador/stack.yaml /srv/docker/stacks/comptador/stack.yaml
+cp comptador/stack.yaml /srv/docker/stacks/comptador/stack.yaml
 # cp consul-cluster/stack.yaml /srv/docker/stacks/consul-cluster/stack.yaml
 cp elasticsearch/stack.yaml /srv/docker/stacks/elasticsearch/stack.yaml
 cp elasticsearch/setup /srv/docker/stacks/elasticsearch/setup
